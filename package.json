@@ -1,0 +1,33 @@
+{
+  "name": "lemmencode",
+  "version": "1.0.0",
+  "description": "LemmEncode is a simple and secure module for encoding and decoding strings using a unique key and hash-based techniques. Perfect for keeping your data safe and secure.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "npx tsx test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silvaezequias/lemmencode.git"
+  },
+  "keywords": [
+    "encode",
+    "decode",
+    "hash",
+    "crypto",
+    "pass"
+  ],
+  "author": "Ezequias",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/silvaezequias/lemmencode/issues"
+  },
+  "homepage": "https://github.com/silvaezequias/lemmencode#readme",
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "tsx": "^4.15.7",
+    "typescript": "^5.5.2"
+  }
+}
