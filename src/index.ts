@@ -1,2 +1,2 @@
-export { EncodeString } from "./encode";
-export { DecodeString } from "./decode";
+export { encodeString } from "./encode";
+export { decodeString } from "./decode";
