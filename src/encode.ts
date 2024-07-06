@@ -1,11 +1,15 @@
 import * as crypto from "crypto";
 
-function hashKey(key: string): string {
-  return crypto.createHash("sha256").update(key).digest("hex");
+function hashKey(key: string, salt: string): string {
+  return crypto
+    .createHash("sha256")
+    .update(salt + key)
+    .digest("hex");
 }
 
-export function EncodeString(data: string, key: string): string {
-  const hashedKey = hashKey(key);
+export function encodeString(data: string, key: string): string {
+  const salt = crypto.randomBytes(16);
+  const hashedKey = hashKey(key, salt.toString("hex"));
   const dataChars = data.split("");
   const keyChars = hashedKey.split("");
 
@@ -26,5 +30,9 @@ export function EncodeString(data: string, key: string): string {
     encodedString += encodedChar;
   });
 
-  return encodedString;
+  const encodedStringBase64 = Buffer.from(encodedString).toString("base64");
+  const temperedString = `${salt.toString("hex")}:${encodedStringBase64}`;
+  const result = Buffer.from(temperedString).toString("base64");
+
+  return result;
 }
