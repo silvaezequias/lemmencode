@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "npx tsx test.ts"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,9 @@
   },
   "homepage": "https://github.com/silvaezequias/lemmencode#readme",
   "devDependencies": {
+    "@jest/globals": "^29.7.0",
     "@types/node": "^20.14.9",
+    "ts-jest": "^29.1.5",
     "tsx": "^4.15.7",
     "typescript": "^5.5.2"
   }
